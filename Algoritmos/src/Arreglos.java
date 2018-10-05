@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Arreglos {
 	
@@ -13,5 +14,14 @@ public class Arreglos {
 			meses[i] = prueba[aux];		
 			
 	        } return meses;
+	}
+	public int[] Suma (int[] n1, int[] n2) {
+		
+		int[] aleatorio = new int [n1.length];
+		
+		for (int i = 0; i < n1.length; i++) {
+			aleatorio [i] = n1[i] + n2[i];
+
+		} return aleatorio;		
 	}
 }
