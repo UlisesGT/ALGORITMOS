@@ -8,6 +8,7 @@ public class Algoritmosapp {
 		
 		Ciclos ciclo = new Ciclos ();		
 		Condicionales condicion = new Condicionales();
+		Arreglos arreglo = new Arreglos ();
 		
 		Scanner leer = new Scanner (System.in);
 		
@@ -74,19 +75,36 @@ public class Algoritmosapp {
 			respuesta = condicion.Adivinar(n1, n2);
 			System.out.println(respuesta);
 			
-		} while(!respuesta.equals("Acertaste"));*/
+		} while(!respuesta.equals("Acertaste"));
 		
 		//Numero Primo
 			System.out.println("ingresa un numero:");
 			n1 = leer.nextInt();
 			System.out.println("Tu numero "+ciclo.Primo(n1));
 		
-		//Imprime un cuadro relleno de asteriscos
-//		do{
-//			System.out.println("Numero");
-//		    n1 = leer.nextInt();
-//		    System.out.println(ciclo.Cuadrado(n1));
-//		  } while (n1 != 0);
+		Imprime un cuadro relleno de asteriscos
+		do{
+			System.out.println("Numero");
+		    n1 = leer.nextInt();
+		    System.out.println(ciclo.Cuadrado(n1));
+		  } while (n1 != 0);*/
+		
+		//Arreglo
+		
+		Random rnd = new Random(System.nanoTime());
+		int[] aleatorio = new int [12];
+		String[] meses = new String [12];
+		
+		for (int i = 0; i < meses.length; i++) {
+			
+			aleatorio[i] = rnd.nextInt(12);
+			meses = arreglo.Año(aleatorio);
+		} 
+		for (String temp : meses) {
+			
+			System.out.println(temp);
+		}
+		
 	}
 
 }
