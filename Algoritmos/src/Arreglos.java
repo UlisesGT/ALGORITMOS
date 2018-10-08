@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 public class Arreglos {
@@ -23,5 +25,15 @@ public class Arreglos {
 			aleatorio [i] = n1[i] + n2[i];
 
 		} return aleatorio;		
+	}
+	public int promedio (ArrayList numeros) {
+		
+		int prom = 0;
+		Iterator it = numeros.iterator();
+		while(it.hasNext()) {
+			prom += (int)it.next();
+		} 
+		prom = prom/numeros.size();
+		return prom;
 	}
 }

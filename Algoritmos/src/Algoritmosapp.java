@@ -125,7 +125,7 @@ public class Algoritmosapp {
 			aleatorio0 = arreglo.Suma(aleatorio, aleatorio1);
         for (int i = 0; i < n1; i++) {
 		    System.out.println("Posición "+i+":  "+aleatorio[i]+" + "+aleatorio1[i]+" = "+aleatorio0[i]);
-	    }*/
+	    }
 		
 		//ArrayList
 		ArrayList list = new ArrayList();
@@ -147,6 +147,17 @@ public class Algoritmosapp {
 		while(it.hasNext()) { //El Ciclo se efectua mientra alla elementos en la lista
 			System.out.println("\t\t\t"+it.next());
 		}
-		System.out.println("\n\tEl tamaño actual de la lista es: "+list.size());
+		System.out.println("\n\tEl tamaño actual de la lista es: "+list.size());*/
+		
+		//Ejercicio ArraList
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		do {
+			System.out.println("Ingresa valores al arreglo: ");
+			n1 = leer.nextInt();
+			if (n1 >= 0)
+			    list.add(n1);			
+		}while(n1 >= 0);
+		n1 = arreglo.promedio(list);
+		System.out.println("PROMEDIO: "+n1);
 	}
 }
