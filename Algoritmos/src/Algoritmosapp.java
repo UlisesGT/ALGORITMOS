@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.PriorityQueue;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Stack;
+import java.util.TreeSet;
 
 public class Algoritmosapp {
 
@@ -147,7 +150,7 @@ public class Algoritmosapp {
 		while(it.hasNext()) { //El Ciclo se efectua mientra alla elementos en la lista
 			System.out.println("\t\t\t"+it.next());
 		}
-		System.out.println("\n\tEl tamaño actual de la lista es: "+list.size());*/
+		System.out.println("\n\tEl tamaño actual de la lista es: "+list.size());
 		
 		//Ejercicio ArraList
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -159,5 +162,80 @@ public class Algoritmosapp {
 		}while(n1 >= 0);
 		n1 = arreglo.promedio(list);
 		System.out.println("PROMEDIO: "+n1);
+		
+		//Seria de Fibonacci
+		long[] fibo = new long [n1];
+		System.out.println("Ingres la cantidad de numeros que desea imprimir de la serie fibonacci: ");
+		n1 = leer.nextInt();
+		
+		fibo = arreglo.fibonacci(n1);
+		
+		for (int i = 0; i < n1; i++)		
+			System.out.println(i+1+".  "+fibo[i]);
+		
+	    //Pilas
+		Stack <String> pila = new Stack<String>();
+		
+		pila.push("Adas");
+		pila.push("Hola");
+		pila.push("Adios");
+		pila.push("Faro");
+		
+		System.out.println("Tamaño: "+pila.size());
+		//muestra el elemento de la cima sin quitarlo
+		System.out.println("Ultimo elemento: "+pila.peek());
+		System.out.println("Tamaño: "+pila.size());
+		//muestra el elemento de la cima y lo quita
+		System.out.println("Ultimo elemento despues del peek: "+pila.pop());
+		System.out.println("Tamaño: "+pila.size());
+		System.out.println("Ultimo elemento despues del pop: "+pila.peek());
+		System.out.println("Indice 1: "+pila.get(1));
+		
+		while (pila.size() > 0) 
+			System.out.println("\t"+pila.pop());
+		
+		//Colas
+		PriorityQueue <String> cola = new PriorityQueue <String> ();
+		cola.add("carro");
+		cola.add("avion");
+		cola.add("comnputadora");
+		cola.add("raton");
+		
+		Iterator it = cola.iterator();
+		while (it.hasNext()) 
+			System.out.println(it.next());
+		
+		//peek nos muestra el primer elemento de la cola
+		System.out.println("\nPrimero: "+cola.peek());
+		//pool nos muestra el primer elemento de la cola y lo saca de ella
+		System.out.println("Primero: "+cola.poll());
+		System.out.println("Nuevo primer: "+cola.peek());
+		//devuelve true si contiene al elemento
+		System.out.println("\n¿Contiene avion?\n"+cola.contains("comnputadora"));
+		System.out.println("¿Contiene mochila?\n"+cola.contains("mochila"));
+		cola.remove("raton");*/
+		
+		//TreeSet
+		TreeSet <String> arbol = new TreeSet <String>();
+		arbol.add("rama");
+		arbol.add("camion");
+		arbol.add("helicoptero");
+		arbol.add("maletin");
+		arbol.add("moto");
+		
+		System.out.println("Elementos del Árbol: "+arbol.size());
+		
+		Iterator it = arbol.iterator();
+		while (it.hasNext())
+			System.out.println("\t"+it.next());
+		//No permite agregar dos veces el mismo elemento
+		System.out.println("\n¿Se agrego elemento? "+arbol.add("raton"));
+		System.out.println("¿Se agrego elemento? "+arbol.add("maletin"));
+		System.out.println("\n\tElementos del Árbol: "+arbol.size());
+		arbol.remove("moto");
+		System.out.println("Despues de remove: "+arbol.size());
+		arbol.clear();
+		System.out.println("Despues de clear: "+arbol.size());
+	
 	}
 }

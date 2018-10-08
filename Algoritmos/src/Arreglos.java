@@ -1,6 +1,7 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Iterator;
 import java.util.Random;
+import java.util.Stack;
 
 public class Arreglos {
 	
@@ -36,4 +37,19 @@ public class Arreglos {
 		prom = prom/numeros.size();
 		return prom;
 	}
+	public long[] fibonacci (int x) {
+		
+		long n1 = 0, n2 = 1, n3 = 0;
+		long[] fibo = new long[x];
+		
+		for (int i = 0; i < x; i++){
+
+			n3 = n1 + n2;
+			n2 = n1;
+			n1 = n3;
+			
+			fibo[i] = n2;
+		} return fibo;
+	}	
+	
 }
