@@ -293,7 +293,12 @@ public class Algoritmosapp {
 		Archivo archivo = new Archivo ();
 		String lorem = "";
 		
-		lorem = archivo.leer("C:\\Users\\cmuli\\Documents\\Prueba1.txt");
+		//lorem = archivo.leer("C:\\Users\\cmuli\\Documents\\JAVA Archivos\\Lectura.txt");
+		lorem = archivo.cambiar("C:\\Users\\cmuli\\Documents\\JAVA Archivos\\Lectura.txt");
 		System.out.println(lorem);
+//		lorem = archivo.cambiar(lorem);
+//		System.out.println(lorem);
+//		
+		//archivo.escribir("C:\\Users\\cmuli\\Documents\\JAVA Archivos\\Escritura.txt", "Probando el nuevo archivo por segunda vez");
 	}
 }
