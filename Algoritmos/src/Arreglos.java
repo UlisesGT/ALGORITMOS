@@ -50,6 +50,18 @@ public class Arreglos {
 			
 			fibo[i] = n2;
 		} return fibo;
-	}	
+	}
+	public int[] posiciones (int[] posicion1) {
+		
+		int[] posicion = new int[10];
+		
+		posicion[0] = posicion1[9];
+		for (int i = 1; i < posicion.length; i++) {
+			
+			posicion[i] = posicion1[i - 1];
+			posicion[0] = posicion1[posicion1.length - 1];
+		} 
+		return posicion;
+	}
 	
 }

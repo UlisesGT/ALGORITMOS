@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Algoritmosapp {
@@ -213,7 +216,7 @@ public class Algoritmosapp {
 		//devuelve true si contiene al elemento
 		System.out.println("\n¿Contiene avion?\n"+cola.contains("comnputadora"));
 		System.out.println("¿Contiene mochila?\n"+cola.contains("mochila"));
-		cola.remove("raton");*/
+		cola.remove("raton");
 		
 		//TreeSet
 		TreeSet <String> arbol = new TreeSet <String>();
@@ -236,6 +239,61 @@ public class Algoritmosapp {
 		System.out.println("Despues de remove: "+arbol.size());
 		arbol.clear();
 		System.out.println("Despues de clear: "+arbol.size());
-	
+		
+		//HashTable
+		Hashtable<Integer, String> hash = new Hashtable <Integer, String>();
+		//Se define la clave y el valor
+		hash.put(1, "auto");
+		hash.put(2, "perro");
+		hash.put(3, "lap");
+		//añade el ultimo elemento con el mismo numero de clave
+		hash.put(3, "planta");
+		//HashTable se recorre como Enumeration en lugar de Iterator
+		Enumeration en = hash.keys();
+		while(en.hasMoreElements()) {
+			int clave = (int)en.nextElement();
+			System.out.println(clave+"  "+hash.get(clave));
+		}
+		hash.put(4, "nuve");
+		hash.put(5, "ave");
+		//podemos comprobar si nuestra HashTable ya contiene esa clave
+		System.out.println("\n¿Exixte la clave 3?\n"+"\t"+hash.containsKey(3));
+		System.out.println("¿Existe la clave 4?\n"+"\t"+hash.containsKey(4));
+		
+		//TreeMap. Incluye clave por valor, y se ordena automaticamente de acuerdo a las claves
+		TreeMap <String, Integer> tmap = new TreeMap<>();
+		tmap.put("gato", 90);
+		tmap.put("pantera", 91);
+		tmap.put("mono", 10);
+		tmap.put("guitarra", 80);
+		
+		Iterator it = tmap.keySet().iterator();
+		while(it.hasNext()) {
+			String clave = (String) it.next();
+			System.out.println(clave+" -> "+tmap.get(clave));
+		}	
+		
+		//Posiciones
+		int posicion[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		System.out.println("Vueltas: ");
+		n1 = leer.nextInt();
+		
+            for (int temp : posicion) 
+					System.out.print(temp+" ");
+            
+			for (int cont = 0; cont < n1; cont++) {
+
+			        posicion = arreglo.posiciones(posicion);
+				 
+				System.out.println();
+			    for (int i : posicion)
+				     System.out.print(i+" ");
+			}*/	
+		//Archivos
+		Archivo archivo = new Archivo ();
+		String lorem = "";
+		
+		lorem = archivo.leer("C:\\Users\\cmuli\\Documents\\Prueba1.txt");
+		System.out.println(lorem);
 	}
 }
